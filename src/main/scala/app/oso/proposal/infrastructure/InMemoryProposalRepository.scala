@@ -11,4 +11,6 @@ class InMemoryProposalRepository extends ProposalRepository{
       visible = true,
       votes = 0)
   )
+
+  override def create(proposal: Proposal): Proposal = proposal
 }
