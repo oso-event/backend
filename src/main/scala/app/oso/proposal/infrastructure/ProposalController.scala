@@ -14,21 +14,18 @@ class ProposalController[F[_]: Effect](service:ProposalService) extends Http4sDs
 
   val controller: HttpService[F] = HttpService[F]{
 
-      case GET  -> Root / "proposals" => Ok(service.list.asJson)
+      case GET  -> Root / ProposalController.ENDPOINT_BASE => Ok(service.list.asJson)
 
-      case req @ POST -> Root / "proposals" => {
-
+      case req @ POST -> Root / ProposalController.ENDPOINT_BASE => {
         req.decode[Proposal] {
           data => {
             Ok(service.create(data).asJson)
           }
         }
-
-
       }
-
   }
 
-
-
+}
+object ProposalController{
+  val ENDPOINT_BASE = "proposals"
 }

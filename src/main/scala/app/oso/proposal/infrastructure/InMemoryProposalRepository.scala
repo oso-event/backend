@@ -12,5 +12,7 @@ class InMemoryProposalRepository extends ProposalRepository{
       votes = 0)
   )
 
+  override def find(id: Int): Proposal = findAll.head
+
   override def create(proposal: Proposal): Proposal = proposal
 }

@@ -6,7 +6,6 @@ import app.oso.proposal.infrastructure.{InMemoryProposalRepository, ProposalCont
 import org.http4s.dsl.io._
 import io.circe.syntax._
 import io.circe.generic.auto._
-import org.http4s.circe._
 import cats.effect.IO
 import org.http4s.{HttpService, Method, Request, Response, Status, Uri}
 import org.specs2.mutable.Specification
@@ -29,8 +28,9 @@ class ProposalControllerSpec extends Specification {
       executeController(Request[IO](Method.GET, Uri.uri("/proposals"))).status must beEqualTo(Status.Ok)
     }
     "post proposal" >> {
-      val body    = Proposal(title = "Test", id=2, speakers = "Test", votes = 1, visible =  true).asJson.toString
-      val request = Request[IO](Method.POST, Uri.uri("/proposals")).withBody(body).unsafeRunSync()
+      val body     = Proposal(title = "Test", id=2, speakers = "Test", votes = 1, visible =  true).asJson.toString
+      val endpoint = Uri.fromString(s"/${ProposalController.ENDPOINT_BASE}").right.get
+      val request  = Request[IO](Method.POST, endpoint).withBody(body).unsafeRunSync()
       executeController(request).status must beEqualTo(Status.Ok)
     }
   }
