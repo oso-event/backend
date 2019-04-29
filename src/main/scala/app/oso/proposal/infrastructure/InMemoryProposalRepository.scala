@@ -15,4 +15,6 @@ class InMemoryProposalRepository extends ProposalRepository{
   override def find(id: Int): Proposal = findAll.head
 
   override def create(proposal: Proposal): Proposal = proposal
+
+  override def update(proposal: Proposal): Proposal = proposal
 }
