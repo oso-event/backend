@@ -1,5 +1,5 @@
 # Open Space Organizer
-![](https://travis-ci.org/oso-event/backend.svg?branch=master)
+[![](https://travis-ci.org/oso-event/backend.svg?branch=master)](https://travis-ci.org/oso-event/backend)
 
 
 ## About
@@ -10,7 +10,7 @@ With the application, you can receive talk or workshop proposals for your event 
 
 ## Documentation
 
-* [Features](docs/features)
+* [Features](docs/features) (you can also see the raw [Gherkin specifications](src/test/resources/features))
 
 
 ## Running the server
