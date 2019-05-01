@@ -1,6 +1,6 @@
 package app.oso.votation.infrastructure
 
-import app.oso.proposal.infrastructure.InMemoryProposalRepository
+import app.oso.proposal.domain.ProposalRepository
 import app.oso.votation.application.VotationService
 import app.oso.votation.infrastructure.framework.VotationDTOVal
 import cats.effect.Effect
@@ -13,7 +13,7 @@ import org.http4s.dsl.Http4sDsl
 
 class VotationController[F[_]: Effect](
   service:VotationService,
-  proposalRepository: InMemoryProposalRepository) extends Http4sDsl[F] {
+  proposalRepository: ProposalRepository) extends Http4sDsl[F] {
 
   val controller: HttpService[F] = HttpService[F]{
 

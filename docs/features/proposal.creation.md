@@ -1,7 +1,7 @@
 # Proposal creation feature
 
 In order to get a proposal being published
-  As an person who participate on the open space
+  As a person who participate on the open space
   I want to send a new proposal
 
 ## Background ()
@@ -41,3 +41,4 @@ _And_ the response will return a proposal in its body with this information:
   "id":       "generated id"
 }
 ```
+

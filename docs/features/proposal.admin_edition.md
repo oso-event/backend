@@ -11,12 +11,12 @@ At this point, the users in the application does not need to be authenticated in
 
   They just type the information and a new Task will be updated.
   The authentication is made on the client side.
-  
+
 _Given_ the following proposals were sent to the system:
-  
-| identifier | title    | speakers                    | visible | votes |
-|------------|----------|-----------------------------|---------|-------|
-| 1          | A title  | Ana Smith and Tobias Walter | false   | 0     |
+
+| identifier | title   | speakers                    | visible | votes |
+|------------|---------|-----------------------------|---------|-------|
+| 1          | A title | Ana Smith and Tobias Walter | false   | 0     |
 
 ## Edit a proposal data
 

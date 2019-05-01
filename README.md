@@ -8,6 +8,11 @@ This is the backend for an application that manage Open Space Events and Meeting
 
 With the application, you can receive talk or workshop proposals for your event or conference and they will voted when the event starts.
 
+## Documentation
+
+* [Features](docs/features)
+
+
 ## Running the server
 
 The web server can be started with sbt using this command

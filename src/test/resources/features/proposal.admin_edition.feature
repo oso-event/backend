@@ -1,3 +1,4 @@
+@proposal
 Feature: Proposal admin edition feature
 
   In order to review and publish a proposal

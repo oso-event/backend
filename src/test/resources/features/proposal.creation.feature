@@ -1,7 +1,8 @@
+@proposal
 Feature: Proposal creation feature
 
   In order to get a proposal being published
-  As an person who participate on the open space
+  As a person who participate on the open space
   I want to send a new proposal
 
   Background:
