@@ -20,7 +20,7 @@ class VotationController[F[_]: Effect](
       case req @ POST -> Root / VotationController.ENDPOINT_BASE => {
         req.decode[VotationDTO] {
           data => {
-            val votation = service.vote(data.userIdentifier, proposalRepository.find(data.proposalIdentifier.toInt))
+            val votation = service.vote(data.userIdentifier, proposalRepository.find(data.proposalIdentifier))
             Ok(votation.asJson)
           }
         }

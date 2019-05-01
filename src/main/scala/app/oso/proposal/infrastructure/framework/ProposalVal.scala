@@ -5,5 +5,5 @@ import app.oso.proposal.domain.Proposal
 
 object ProposalVal {
 
-  def unapply(id: String)(implicit service:ProposalService): Option[Proposal] = service.find(id.toInt)
+  def unapply(id: String)(implicit service:ProposalService): Option[Proposal] = service.find(id)
 }

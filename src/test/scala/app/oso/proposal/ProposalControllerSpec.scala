@@ -2,7 +2,8 @@ package app.oso.proposal
 
 import app.oso.proposal.application.ProposalService
 import app.oso.proposal.domain.Proposal
-import app.oso.proposal.infrastructure.{InMemoryProposalRepository, ProposalController, ProposalDTO}
+import app.oso.proposal.infrastructure.dto.{ProposalAdminDTO, ProposalDTO}
+import app.oso.proposal.infrastructure.{InMemoryProposalRepository, ProposalController}
 import org.http4s.dsl.io._
 import io.circe.syntax._
 import io.circe.generic.auto._
@@ -28,13 +29,19 @@ class ProposalControllerSpec extends Specification {
       executeController(Request[IO](Method.GET, Uri.uri("/proposals"))).status must beEqualTo(Status.Ok)
     }
     "post proposal" >> {
-      val body     = Proposal(title = "Test", id=2, speakers = "Test", votes = 1, visible =  true).asJson.toString
+      val body     = ProposalDTO(title = Some("Test"), speakers = Some("Test")).asJson.toString
       val endpoint = Uri.fromString(s"/${ProposalController.ENDPOINT_BASE}").right.get
       val request  = Request[IO](Method.POST, endpoint).withBody(body).unsafeRunSync()
       executeController(request).status must beEqualTo(Status.Ok)
     }
     "update proposal" >> {
-      val body     = ProposalDTO(title = Some("test"), speakers = Some("Test"), visible =  Some(true)).asJson.toString
+      val body     = ProposalAdminDTO(title = Some("Test"), speakers = Some("Test"), visible =  Some(true)).asJson.toString
+      val endpoint = Uri.fromString(s"/${ProposalController.ENDPOINT_BASE}/1").right.get
+      val request  = Request[IO](Method.PATCH, endpoint).withBody(body).unsafeRunSync()
+      executeController(request).status must beEqualTo(Status.Ok)
+    }
+    "update proposal with partial information" >> {
+      val body     = ProposalAdminDTO(visible =  Some(false)).asJson.toString
       val endpoint = Uri.fromString(s"/${ProposalController.ENDPOINT_BASE}/1").right.get
       val request  = Request[IO](Method.PATCH, endpoint).withBody(body).unsafeRunSync()
       executeController(request).status must beEqualTo(Status.Ok)
