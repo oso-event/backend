@@ -78,3 +78,9 @@ _And_ the response will return a proposal in its body with this information:
   "id":       "1"
 }
 ```
+as Walter",
+  "visible":  true,
+  "votes":    0,
+  "id":       "1"
+}
+```

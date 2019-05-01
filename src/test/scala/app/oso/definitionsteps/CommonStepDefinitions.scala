@@ -14,9 +14,10 @@ class CommonStepDefinitions extends ScalaDsl with EN with Matchers {
   When("""a {string} request for the {string} endpoint is created"""){ (_method:String, _endpoint:String) =>{
     CommonContext.endpoint = Uri.fromString(s"${_endpoint}").right.get
     CommonContext.method   = _method match {
-      case "POST" => Method.POST
-      case "PATCH" => Method.PATCH
+      case "POST"   => Method.POST
+      case "PATCH"  => Method.PATCH
       case "DELETE" => Method.DELETE
+      case "GET"    => Method.GET
     }
   }}
 

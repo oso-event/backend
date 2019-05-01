@@ -66,6 +66,11 @@ _When_ a "DELETE" request for the "/votation/kevin-1" endpoint is created
 _And_ the request is sent
 
 _Then_ the response will have the "204" status code.
+on/kevin-1" endpoint is created
+
+_And_ the request is sent
+
+_Then_ the response will have the "204" status code.
 
 
 _And_ the request is sent

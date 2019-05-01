@@ -39,4 +39,13 @@ class ProposalStepDefinitions extends ScalaDsl with EN with Matchers {
     returnedProposal.votes should be (desiredProposal.votes)
   }}
 
+  Then("""the response will return a list of proposals:"""){ body:String =>
+    val desiredProposals:List[Proposal]  = decode[List[Proposal]](body).right.get
+    val returnedProposals:List[Proposal] = CommonContext.response.as[List[Proposal]].unsafeRunSync()
+
+    returnedProposals.length should be(desiredProposals.length)
+    returnedProposals.head.title should be(desiredProposals.head.title)
+
+  }
+
 }
