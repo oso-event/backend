@@ -6,7 +6,7 @@ Feature: Proposal creation feature
 
   Background:
 
-  At this point, the users in the application doesn´t need to be authenticated in the app
+  At this point, the users in the application does not need to be authenticated in the app
   in order to make a proposal.
 
   They just type the basic information and a new Task will be published.

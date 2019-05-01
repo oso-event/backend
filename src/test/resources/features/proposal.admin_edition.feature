@@ -1,4 +1,4 @@
-Feature: Proposal adminEdition feature
+Feature: Proposal admin edition feature
 
   In order to review and publish a proposal
   As an organizer of the open space
@@ -6,16 +6,16 @@ Feature: Proposal adminEdition feature
 
   Background:
 
-  At this point, the users in the application doesn´t need to be authenticated in the app
+  At this point, the users in the application does not need to be authenticated in the app
   in order to manage proposals.
 
   They just type the information and a new Task will be updated.
   The authentication is made on the client side.
 
   Given the following proposals were sent to the system:
+
     | identifier | title    | speakers                    | visible | votes |
     | 1          | A title  | Ana Smith and Tobias Walter | false   | 0     |
-
 
 
   Scenario: Edit a proposal data
