@@ -5,7 +5,6 @@ import app.oso.proposal.application.ProposalService
 import app.oso.proposal.domain.Proposal
 import app.oso.proposal.infrastructure.{InMemoryProposalRepository, ProposalController}
 import cats.effect.IO
-import com.sun.tools.javac.util.Name.Table
 import cucumber.api.PendingException
 import org.http4s.dsl.io._
 import io.circe.syntax._
@@ -14,7 +13,6 @@ import org.http4s.circe._
 import io.circe.parser.decode
 import org.http4s.circe.CirceEntityDecoder._
 import cucumber.api.scala.{EN, ScalaDsl}
-import io.cucumber.datatable.DataTable
 import org.http4s.{HttpService, MediaType, Method, Request, Response, Status, Uri, headers}
 import org.scalatest.Matchers
 

@@ -1,5 +1,6 @@
 package app.oso
 
+import com.waioeka.sbt.runner.CucumberSpec
 import cucumber.api.CucumberOptions
 import cucumber.api.junit.Cucumber
 import org.junit.runner.RunWith
@@ -14,4 +15,4 @@ import org.junit.runner.RunWith
     "json:target/cucumber/test-report.json",
     "junit:target/cucumber/test-report.xml")
 )
-class CucumberTests
+class CucumberTests extends CucumberSpec
